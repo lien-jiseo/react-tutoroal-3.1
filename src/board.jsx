@@ -1,13 +1,28 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import Square from './square';
 
+// export default function Board(props) {
+//   const renderSquare = (i) => (
+//     <Square
+//       value={props.squares[i]}
+//       onClick={() => props.onClick(i)}
+//     />
+//   );
+
+// export default function Board(props) {
 export default function Board(props) {
+  const { squares, onClick } = props;
+
   const renderSquare = (i) => (
     <Square
-      value={props.squares[i]}
-      onClick={() => props.onClick(i)}
+      value={squares[i]}
+      onClick={() => onClick(i)}
+      // value={squares[i]}
+      // onClick={() => onClick(i)}
     />
   );
+
   return (
     <div>
       <div className="board-row">
